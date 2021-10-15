@@ -6,21 +6,13 @@ using System.Threading.Tasks;
 
 namespace LibreriaEscuela.Models
 {
-    public class Alumno
+    public sealed class Alumno:Persona
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public int DNI { get; set; }
-        public DateTime FechaNacimiento { get; set; }
+       
         public int NroLegajo { get; set; }
 
-        public Alumno(string nombre, string apellido, int dni, DateTime fechaNac, int nroLegajo)
+        public Alumno(string nombre, string apellido, int dni, DateTime fechaNac, int nroLegajo):base(nombre,apellido,dni,fechaNac)
         {
-            Nombre = nombre;
-            Apellido = apellido;
-            DNI = dni;
-            FechaNacimiento = fechaNac;
             NroLegajo = nroLegajo;
         }
     }
